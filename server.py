@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This Program is for Voice less video Streaming using UDP protocol 
+This Program is for  reeading video froames from client (Bpi)
 -------
 This is a Server
     - Run Client Code first then run Server Code
@@ -11,13 +11,12 @@ Requirements
     - IP4v needed select unused port number
     - WebCamera needed
 """
-import cv2, socket, numpy, pickle    # Import Modules
+import cv2, socket, numpy, pickle  
 
-# AF_INET refers to the address of family of ip4v
-# SOCK_DGRAM means connection oriented UDP protocol
+
 s=socket.socket(socket.AF_INET , socket.SOCK_DGRAM)  # Gives UDP protocol to follow
 ip="192.168.0.137"   # Server public IP
-port=2003             # Server Port Number to identify the process that needs to recieve or send packets
+port=2003             # Port number should be same for both server and client
 s.bind((ip,port))     # Bind the IP:port to connect 
 
 # In order to iterate over block of code as long as test expression is true
