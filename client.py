@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-This Program is for Voice less video Streaming using UDP protocol 
+This Program is for camera Streaming using UDP protocol  from Bpi
 -------
-This is a Client
+This is a Client (Bpi )
     - Run Client Code first then Server Code
     - Configure IP and PORT number of your Server
     
@@ -13,14 +13,13 @@ Requirements
 """
 import cv2, socket, pickle, os    # Import Modules
 
-# AF_INET refers to the address of family of ip4v
-# SOCK_DGRAM means connection oriented UDP protocol
-s=socket.socket(socket.AF_INET , socket.SOCK_DGRAM)  # Gives UDP protocol to follow
-s.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10000000) # setSockoptTo open two protocols,SOL_SOCKET: Request applies to socket layer.
-serverip="192.168.0.137"       # Server public IP
-serverport=2003              # Server Port Number to identify the process that needs to recieve or send packets
 
-cap = cv2.VideoCapture(0)       # Start Streaming video, will return video from your first webcam
+s=socket.socket(socket.AF_INET , socket.SOCK_DGRAM)  
+s.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10000000) 
+serverip="192.168.0.137"       # IP address of ROS master (PC)
+serverport=2003              # Port number should be same for client and server
+
+cap = cv2.VideoCapture(1)       # Start Streaming video, will return video from your first webcam
 
 # In order to iterate over block of code as long as test expression is true
 while True:
