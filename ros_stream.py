@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+
+
+  #Project Name: sentinel_drone
+  #Author: Saail
+  #Maintainer: ROS team
+  #Copyright (c) 2023 eYantra IITB 
+
+
 #converting udp vide frames to ros topic
 import rospy # Python library for ROS
 from sensor_msgs.msg import Image # Image is the message type
