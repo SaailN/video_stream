@@ -32,7 +32,8 @@ def publish_message():
 
 	s=socket.socket(socket.AF_INET , socket.SOCK_DGRAM)  # Gives UDP protocol to follow
 
-	ip="192.168.0.137"   # Server public IP
+	#ip="192.168.0.137"   # Server public IP
+	ip=os.environ['ROS_IP']
 	port=2003         # Server Port Number to identify the process that needs to recieve or send packets
 	s.bind((ip,port))     # Bind the IP:port to connect 
 
